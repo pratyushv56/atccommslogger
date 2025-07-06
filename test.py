@@ -38,4 +38,4 @@ for i in range(total_chunks):
     chunk_transcription = processor.batch_decode(predicted_ids, skip_special_tokens=True)[0]
     full_transcription.append(chunk_transcription)
 
-print("\n🎤 Full Transcription:\n", " ".join(full_transcription))
+print("\nFull Transcription:\n", " ".join(full_transcription))
