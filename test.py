@@ -2,7 +2,7 @@ import torch
 import librosa
 from transformers import WhisperProcessor, WhisperForConditionalGeneration
 
-# Using the fine-tuned ATC model
+
 model_id = "jlvdoorn/whisper-large-v3-atco2-asr-atcosim"
 
 
@@ -13,11 +13,11 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Using device: {device}")
 model.to(device)
 
-audio_path = "test3.wav"
+audio_path = "test2.wav"
 print(f"Loading and resampling {audio_path}...")
 audio, sr = librosa.load(audio_path, sr=16000)
 
-chunk_duration = 10  # in seconds
+chunk_duration = 10  
 chunk_samples = int(chunk_duration * sr)
 total_chunks = (len(audio) + chunk_samples - 1) // chunk_samples
 
